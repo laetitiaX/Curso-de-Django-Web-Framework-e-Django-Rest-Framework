@@ -1,17 +1,11 @@
-{% include 'recipes/partials/head.html' %}
+{% extends 'global/base.html' %}
 
-<body>
-    <header class="main-header-container">
-        <div class="main-header container">
-            <h1>
-                <a class="main-logo" href="/">
-                    <i class="fas fa-clock main-logo-icon"></i>
-                    <span class="main-logo-text ">Hora do Chá</span>
-                </a>
-            </h1>
-        </div>
-    </header>
+{%block title%}Home | {% endblock %}
 
-</body>
-
-</html>
+{% block content %}
+    <div class="main-content main-content-list container">
+        {% for recipe in recipes  %}
+            {% include 'recipes/partials/recipe.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}
