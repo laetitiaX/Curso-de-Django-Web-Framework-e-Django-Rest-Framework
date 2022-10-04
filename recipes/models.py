@@ -24,6 +24,9 @@ class Recipe(models.Model):
     is_published = models.BooleanField(default=False)
     cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d/')
 
+    def __str__(self):
+        return self.title
+
 # EDITED
 # title description slug
 # preparation_time preparation_time_unit
